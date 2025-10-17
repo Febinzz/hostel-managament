@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Manage Students</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-manage-page">
+
+    <div class="container ">
+        <h2 class="title">🎓 Manage Students</h2>
+        <p class="subtitle">View, remove, or delete student records</p>
+
+        <div class="table-container">
+            <table id="manageStudentsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Course</th>
+                        <th>Room</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="btn-group">
+            <a href="admin_add_room.html" class="btn">Previous Page</a>
+            <a href="admin_add_room.html" class="btn back-btn">Back to Admin Home</a>
+        </div>
+    </div>
+
+    <script>
+    const backend = "http://localhost:5000";
+    const studentsTable = document.querySelector("#manageStudentsTable tbody");
+
+    async function loadStudents() {
+        studentsTable.innerHTML = "";
+        try {
+            const students = await fetch(`${backend}/report/students`).then(r => r.json());
+            students.forEach(s => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${s.name}</td>
+                    <td>${s.roll_no}</td>
+                    <td>${s.course}</td>
+                    <td>${s.room_number || "Not Allocated"}</td>
+                    <td>
+                        ${s.room_number ? `<button class="action-btn removeAllocation" data-id="${s.student_id}">Remove</button>` : ""}
+                        <button class="action-btn deleteStudent" data-id="${s.student_id}">Delete</button>
+                    </td>
+                `;
+                studentsTable.appendChild(tr);
+            });
+
+            // remove allocation
+            document.querySelectorAll(".removeAllocation").forEach(btn => {
+                btn.addEventListener("click", async () => {
+                    const studentId = btn.dataset.id;
+                    if (!confirm("Remove this student from room?")) return;
+                    try {
+                        const res = await fetch(`${backend}/allocation/${studentId}`, { method: "DELETE" });
+                        const data = await res.json();
+                        alert(res.ok ? data.message : data.error);
+                        loadStudents();
+                    } catch (err) {
+                        console.error(err);
+                        alert("Error removing allocation");
+                    }
+                });
+            });
+
+            // delete student
+            document.querySelectorAll(".deleteStudent").forEach(btn => {
+                btn.addEventListener("click", async () => {
+                    const studentId = btn.dataset.id;
+                    if (!confirm("Delete this student completely?")) return;
+                    try {
+                        await fetch(`${backend}/allocation/${studentId}`, { method: "DELETE" }).catch(() => {});
+                        const res = await fetch(`${backend}/students/${studentId}`, { method: "DELETE" });
+                        const data = await res.json();
+                        alert(res.ok ? "Student deleted successfully" : data.error);
+                        loadStudents();
+                    } catch (err) {
+                        console.error(err);
+                        alert("Error deleting student");
+                    }
+                });
+            });
+
+        } catch (err) {
+            console.error(err);
+            studentsTable.innerHTML = "<tr><td colspan='5'>Error loading students</td></tr>";
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        loadStudents();
+    });
+    </script>
+</body>
+</html>

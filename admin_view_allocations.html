@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - View Allocations</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Linking to new CSS -->
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <div class="main-content-area">
+        <div class="container fade-in">
+            <h2>All Allocations</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Room</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="allocationsList">
+                        <!-- Example Rows -->
+                        <tr>
+                            <td data-label="Student">John Doe</td>
+                            <td data-label="Room">Room 101</td>
+                            <td data-label="Action"><button class="btn secondary-btn">Remove</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Student">Jane Smith</td>
+                            <td data-label="Room">Room 102</td>
+                            <td data-label="Action"><button class="btn secondary-btn">Remove</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="admin-links">
+                <a href="admin_add_room.html" class="btn secondary-btn"><i class="fas fa-plus-circle"></i> Add Room</a>
+                <a href="admin_allocate_room.html" class="btn secondary-btn"><i class="fas fa-calendar-check"></i> Allocate Room</a>
+                <a href="index.html" class="btn back-btn"><i class="fas fa-home"></i> Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
