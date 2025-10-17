@@ -242,4 +242,8 @@ app.delete("/students/:studentId", (req, res) => {
 });
 
 // ------------------ START SERVER ------------------
-app.listen(5000, () => console.log("✅ Server running at http://localhost:5000"));
+// ------------------ START SERVER ------------------
+const PORT = process.env.PORT || 5000;  // Render will use process.env.PORT
+app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+
+
