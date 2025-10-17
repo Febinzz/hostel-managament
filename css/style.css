@@ -1,0 +1,539 @@
+/* Full-page gradient background */
+body, html {
+    height: 80%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+/* Container card */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    max-width: 400px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Page title */
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 16px;
+    color: #fff;
+    background: #007bff;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* For admin and student pages */
+body.admin-page,
+body.student-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f4f4f9;
+}
+
+body.admin-page .container,
+body.student-page .container {
+    max-width: 400px;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    background: #fff;
+    text-align: center;
+}
+/* Make body full height and center content */
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+    background-color: #f5f5f5; /* optional, for better look */
+    font-family: Arial, sans-serif;
+}
+
+/* Container styling */
+.container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 300px; /* adjust width if needed */
+}
+
+/* Form input styling */
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.back-btn {
+    margin-top: 15px;
+    display: block;
+}
+/* Ensure html and body take full width and height */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Full-page gradient background */
+.hero {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* full viewport height */
+    width: 100vw;  /* full viewport width */
+    color: #fff;
+    text-align: center;
+}
+
+/* Container card stays centered */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+/* Style dropdowns same as inputs */
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Optional: gray out disabled options */
+select option:disabled {
+    color: gray;
+}
+
+/* Buttons remain consistent */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.back-btn {
+    margin-top: 15px;
+    display: block;
+}
+/* =========================
+   Admin Login Page Styling
+   ========================= */
+body.admin-page {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../b.jpg') no-repeat center center/cover; /* your bg image */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+body.admin-page .container {
+    background: rgba(0, 0, 0, 0.75); /* dark transparent box */
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    text-align: center;
+    width: 350px;
+}
+
+body.admin-page h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+body.admin-page .subtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
+    color: #ccc;
+}
+
+body.admin-page input[type="text"],
+body.admin-page input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    background: #222;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+}
+
+body.admin-page .btn.login-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #ff9800;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+body.admin-page .btn.login-btn:hover {
+    background: #e68900;
+}
+
+body.admin-page .back-btn {
+    margin-top: 20px;
+    font-size: 14px;
+    background: transparent;
+    color: #bbb;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+body.admin-page .back-btn:hover {
+    color: #fff;
+}
+/* ===========================
+   Admin Manage Students Page
+=========================== */
+
+body.admin-manage-page {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      background: url('../b.jpg') no-repeat center center/cover; /* your bg image */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-manage-page .container {
+    background: rgba(0, 0, 0, 0.8); /* dark glassy box like login */
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    max-width: 1000px;
+    width: 95%;
+    color: white;
+    text-align: center;
+}
+
+.admin-manage-page .title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.admin-manage-page .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+#manageStudentsTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#manageStudentsTable th,
+#manageStudentsTable td {
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    color: #eee;
+}
+
+#manageStudentsTable th {
+    background: rgba(255, 152, 0, 0.9);
+    color: white;
+    font-weight: bold;
+}
+
+#manageStudentsTable tr:nth-child(even) {
+    background: rgba(255,255,255,0.05);
+}
+
+.action-btn {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #e68900;
+}
+
+.btn-group {
+    margin-top: 20px;
+}
+
+.btn-group .btn {
+    margin: 0 10px;
+    background: #ff9800;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-group .btn:hover {
+    background: #e68900;
+}
+
+.admin-manage-page .container {
+    min-height: 400px; /* ensures container has enough height even before table loads */
+}
+
+.table-container {
+    min-height: 200px; /* keeps table space reserved */
+}
+#manageStudentsTable {
+    table-layout: fixed;
+    min-width: 600px; /* table stays visible even if container is flex-centered */
+}
+/* --- Global Styles and Font Setup --- */
+:root {
+    --text-light: #ffffff;
+    --bg-dark-overlay: rgba(0, 0, 0, 0.7);
+    --btn-primary: #ff9800;
+    --btn-secondary: #f07b00;
+    --text-dark-btn: #121212;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.landing-page {
+    font-family: 'Inter', sans-serif;
+    background-color: #000;
+    color: var(--text-light);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* --- Container and Background --- */
+.main-container {
+    background-image: url('../b.jpg'); /* Your background image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: var(--bg-dark-overlay);
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff; /* All text white */
+    text-align: center; /* ensures heading is centered */
+}
+/* --- Typography Styles --- */
+.icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--btn-primary);
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 15px 0; /* adjust vertical spacing */
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    color: #ffffff; /* white text */
+    text-align: center; /* center the title */
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    opacity: 0.85;
+    color: #ffffff; /* Ensure white text */
+}
+
+/* --- Button Styles --- */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 40px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.4);
+    color: var(--text-dark-btn);
+}
+
+.btn-admin {
+    background: linear-gradient(180deg, #ffb347 0%, var(--btn-primary) 100%);
+}
+
+.btn-student {
+    background: linear-gradient(180deg, var(--btn-primary) 0%, var(--btn-secondary) 100%);
+}
+
+.btn:hover {
+    background-color: #ffb74d;
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.5), 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+
