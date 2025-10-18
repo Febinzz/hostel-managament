@@ -107,23 +107,18 @@ if (viewAllocationBtn && allocationEl && studentIdInput) {
 // ------------------ ADMIN LOGIN ------------------
 const adminLoginForm = document.getElementById("adminLoginForm");
 if (adminLoginForm) {
-    adminLoginForm.addEventListener("submit", async (e) => {
+    adminLoginForm.addEventListener("submit", (e) => {
         e.preventDefault();
+        // Skip backend completely
+        // You can still grab username if you want
         const username = document.getElementById("adminUsername").value;
-        const password = document.getElementById("adminPassword").value;
+        // const password = document.getElementById("adminPassword").value; // not needed
 
-        try {
-            const res = await fetch(`${backend}/admin/login`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ username, password })
-            });
-            const data = await res.json();
-            if (res.ok) window.location.href = "admin_add_room.html";
-            else alert(data.error);
-        } catch (err) { console.error(err); alert("Login failed"); }
+        // Directly go to the next page
+        window.location.href = "admin_add_room.html"; // replace with your actual next page
     });
 }
+
 
 // ------------------ ADD ROOM ------------------
 const addRoomForm = document.getElementById("addRoomForm");
@@ -257,3 +252,4 @@ if (allocationsTable) {
 
     loadAllocations();
 }
+
