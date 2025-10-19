@@ -4,10 +4,11 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
 
-const app = express();
+
+
 
 // Serve frontend files from 'public' folder
-//app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "index. html")));
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -247,6 +248,7 @@ app.delete("/students/:studentId", (req, res) => {
 // ------------------ START SERVER ------------------
 const PORT = process.env.PORT || 5000;  // Render will use process.env.PORT
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+
 
 
 
