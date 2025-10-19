@@ -4,11 +4,25 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
 
+const path = require("path");
+const express = require("express");
+const app = express();
+
+// Middleware to parse JSON if needed
+app.use(express.json());
+
+// Serve all files (HTML, CSS, JS) from project root
+app.use(express.static(__dirname));
+
+// Route for index.html
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
 
 
 
 // Serve frontend files from 'public' folder
-app.use(express.static(path.join(__dirname, "index. html")));
+//app.use(express.static(path.join(__dirname, "index. html")));
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -248,6 +262,7 @@ app.delete("/students/:studentId", (req, res) => {
 // ------------------ START SERVER ------------------
 const PORT = process.env.PORT || 5000;  // Render will use process.env.PORT
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+
 
 
 
