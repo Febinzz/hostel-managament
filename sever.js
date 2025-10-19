@@ -15,11 +15,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // MySQL connection
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "admin123", // your MySQL password
-    database: "hostel"
+    host: "sql12.freesqldatabase.com",
+    user: "sql12803708",
+    password: "3WwsHPvPl2",
+    database: "sql12803708"
 });
+
 
 db.connect(err => {
     if (err) throw err;
@@ -245,5 +246,6 @@ app.delete("/students/:studentId", (req, res) => {
 // ------------------ START SERVER ------------------
 const PORT = process.env.PORT || 5000;  // Render will use process.env.PORT
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+
 
 
