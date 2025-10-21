@@ -125,6 +125,48 @@ input[type="text"], input[type="number"] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+/* === Login Form === */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 250px;
+    margin: 0 auto;
+}
+
+/* input fields */
+.login-form input {
+    background: #1e1e1e;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 14px;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+}
+
+/* === Orange Login Button === */
+.login-btn {
+    background-color: #ff9900; /* bright orange */
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* hover effect */
+.login-btn:hover {
+    background-color: #e68900; /* slightly darker on hover */
+}
+
+/* optional: fade-in or shadow */
+.login-btn:active {
+    transform: scale(0.98);
+}
 
 /* Button styling */
 .btn {
@@ -592,6 +634,7 @@ body.admin-page::before {
     padding: 2rem;
     border-radius: 10px;
 }
+
 
 
 
