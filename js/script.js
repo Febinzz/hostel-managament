@@ -234,7 +234,9 @@ if (allocateForm) {
 }
 
 // ------------------ VIEW AND DELETE ALLOCATIONS ------------------
-const allocationsTable = document.querySelector("#allocationsList tbody");
+
+const allocationsTable = document.getElementById("allocationsList");
+
 if (allocationsTable) {
     async function loadAllocations() {
         allocationsTable.innerHTML = "";
@@ -268,6 +270,7 @@ if (allocationsTable) {
 
     loadAllocations();
 }
+
 
 
 
