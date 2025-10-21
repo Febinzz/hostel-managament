@@ -535,5 +535,63 @@ body.landing-page {
     background-color: #ffb74d;
     box-shadow: 0 0 15px rgba(255, 152, 0, 0.5), 0 6px 15px rgba(0, 0, 0, 0.6);
 }
+/* === Fade overlay for admin manage page === */
+.admin-manage-page {
+    position: relative;
+    min-height: 100vh;
+    background: url("../images/admin-bg.jpg") center/cover no-repeat; /* your background image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* overlay fade */
+.admin-manage-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* darker = increase 0.6 */
+    z-index: 1;
+}
+
+/* make sure content is above fade */
+.admin-manage-page .container {
+    position: relative;
+    z-index: 2;
+}
+
+  Admin Login Page Styling
+   ========================= */
+   body.admin-page {
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    background: url('../b.jpg') no-repeat center center/cover;
+}
+
+body.admin-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fade */
+    z-index: 0; /* Behind container */
+}
+
+/* Container stays above */
+.container {
+    position: relative;
+    z-index: 1;  /* Must be higher than the overlay */
+    background: rgba(0,0,0,0.85); /* Optional: give the box slight black */
+    padding: 2rem;
+    border-radius: 10px;
+}
+
 
 
