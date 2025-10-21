@@ -1,4 +1,5 @@
-const backend = "http://localhost:5000";
+const backend = "https://hostel-managament-1.onrender.com";
+
 
 // ---------------- Load Reports ----------------
 document.addEventListener("DOMContentLoaded", async () => {
@@ -252,4 +253,5 @@ if (allocationsTable) {
 
     loadAllocations();
 }
+
 
