@@ -11,14 +11,32 @@
         <h2>🏢 Admin Login</h2>
         <p class="subtitle">Secure access for administrators</p>
 
-        <form id="adminLoginForm">
-            <input type="text" id="adminUsername" placeholder="Enter your username" required>
-            <input type="password" id="adminPassword" placeholder="Enter your password" required>
-            <button type="submit" class="btn login-btn">Login</button>
-        </form>
+       <form onsubmit="handleLogin(event)">
+    <input type="text" id="username" placeholder="Admin Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+</form>
+
+<script>
+function handleLogin(event) {
+    event.preventDefault(); // stop page refresh
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    // Simple example (you can replace with real backend check)
+    if (username === "admin" && password === "1234") {
+        // Redirect to admin main page
+        window.location.href = "Admin_main.html";
+    } else {
+        alert("Invalid username or password!");
+    }
+}
+</script>
 
         <a href="index.html" class="btn back-btn">Back to Home</a>
     </div>
     <script src="js/script.js"></script>
 </body>
 </html>
+
