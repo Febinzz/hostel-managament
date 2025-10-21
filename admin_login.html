@@ -11,23 +11,21 @@
         <h2>🏢 Admin Login</h2>
         <p class="subtitle">Secure access for administrators</p>
 
-       <form onsubmit="handleLogin(event)">
-    <input type="text" id="username" placeholder="Admin Username" required>
-    <input type="password" id="password" placeholder="Password" required>
-    <button type="submit">Login</button>
+    <form onsubmit="handleLogin(event)" class="login-form">
+    <input type="text" id="username" placeholder="admin" required>
+    <input type="password" id="password" placeholder="••••" required>
+    <button type="submit" class="login-btn">Login</button>
 </form>
 
 <script>
 function handleLogin(event) {
-    event.preventDefault(); // stop page refresh
+    event.preventDefault();
 
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-    // Simple example (you can replace with real backend check)
     if (username === "admin" && password === "1234") {
-        // Redirect to admin main page
-        window.location.href = "Admin_main.html";
+        window.location.href = "admin main.html"; // ✅ redirect
     } else {
         alert("Invalid username or password!");
     }
@@ -39,4 +37,5 @@ function handleLogin(event) {
     <script src="js/script.js"></script>
 </body>
 </html>
+
 
