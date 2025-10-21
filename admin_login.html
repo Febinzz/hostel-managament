@@ -12,8 +12,8 @@
         <p class="subtitle">Secure access for administrators</p>
 
     <form onsubmit="handleLogin(event)" class="login-form">
-    <input type="text" id="username" placeholder="admin" required>
-    <input type="password" id="password" placeholder="••••" required>
+    <input type="text" id="username" placeholder="username" required>
+    <input type="password" id="password" placeholder="password" required>
     <button type="submit" class="login-btn">Login</button>
 </form>
 
@@ -25,7 +25,7 @@ function handleLogin(event) {
     const password = document.getElementById("password").value.trim();
 
     if (username === "admin" && password === "1234") {
-        window.location.href = "admin main.html"; // ✅ redirect
+        window.location.href = "Admin_main.html"; // ✅ redirect
     } else {
         alert("Invalid username or password!");
     }
@@ -37,5 +37,6 @@ function handleLogin(event) {
     <script src="js/script.js"></script>
 </body>
 </html>
+
 
 
