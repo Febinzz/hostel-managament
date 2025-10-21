@@ -1,4 +1,5 @@
-const backend = "http://localhost:5000";
+const backend = "https://hostel-managament-1.onrender.com";
+
 
 // ------------------ HELPER FUNCTION ------------------
 function renderTable(el, data) {
@@ -91,3 +92,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 100);
     });
 });
+
