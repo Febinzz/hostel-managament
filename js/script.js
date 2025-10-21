@@ -144,18 +144,33 @@ if (addRoomForm) {
 }
 
 // ------------------ VIEW ROOMS ------------------
-const roomsTable = document.querySelector("#roomsList tbody") || document.querySelector("table tbody");
+const roomsTable = document.getElementById("roomsList");
+
 if (roomsTable) {
-    fetch(`${backend}/rooms`)
+    fetch(`${backend}/report/rooms`)
         .then(res => res.json())
         .then(rooms => {
             rooms.forEach(room => {
+                // Determine status class for coloring
+                let statusClass = "status-empty"; // default
+                if (room.status === "Full") statusClass = "status-full";
+                else if (room.status === "Partially Filled") statusClass = "status-partial";
+                else if (room.status === "Vacant") statusClass = "status-available";
+
+                // Create table row
                 const tr = document.createElement("tr");
-                tr.innerHTML = `<td>${room.room_number}</td><td>${room.capacity}</td><td>${room.occupied}</td>`;
+                tr.innerHTML = `
+                    <td data-label="Room Number">${room.room_number}</td>
+                    <td data-label="Capacity">${room.capacity}</td>
+                    <td data-label="Occupied">${room.occupied}</td>
+                    <td data-label="Status" class="${statusClass}">${room.status}</td>
+                `;
                 roomsTable.appendChild(tr);
             });
-        }).catch(err => console.error(err));
+        })
+        .catch(err => console.error("Error fetching rooms:", err));
 }
+
 
 // ------------------ ALLOCATE ROOM ------------------
 const allocateForm = document.getElementById("allocateForm");
@@ -253,5 +268,6 @@ if (allocationsTable) {
 
     loadAllocations();
 }
+
 
 
