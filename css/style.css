@@ -126,47 +126,41 @@ input[type="text"], input[type="number"] {
     box-sizing: border-box;
 }
 /* === Login Form === */
-.login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 250px;
-    margin: 0 auto;
-}
-
-/* input fields */
-.login-form input {
-    background: #1e1e1e;
-    border: none;
-    border-radius: 6px;
-    padding: 12px 14px;
-    color: #fff;
-    font-size: 15px;
-    outline: none;
-}
-
-/* === Orange Login Button === */
+/* === Login Page Button Style === */
 .login-btn {
-    background-color: #ff9900; /* bright orange */
-    color: white;
+    background-color: #ff9900;       /* Bright orange */
+    color: #ffffff;                  /* White text */
     font-weight: 600;
     font-size: 16px;
     border: none;
     border-radius: 6px;
     padding: 12px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    width: 100%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* subtle depth */
 }
 
-/* hover effect */
 .login-btn:hover {
-    background-color: #e68900; /* slightly darker on hover */
+    background-color: #e68a00;       /* Slightly darker orange */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* optional: fade-in or shadow */
-.login-btn:active {
-    transform: scale(0.98);
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2b2b2b;       /* Dark input background */
+    color: #ffffff;
+    font-size: 14px;
 }
+
+.login-form input:focus {
+    outline: 2px solid #ff9900;      /* Orange border on focus */
+}
+
 
 /* Button styling */
 .btn {
@@ -634,6 +628,7 @@ body.admin-page::before {
     padding: 2rem;
     border-radius: 10px;
 }
+
 
 
 
